@@ -54,6 +54,9 @@ class CircleTest {
 
     @org.junit.jupiter.api.Test
     void testToString() {
+        for (int i = 0; i < test_circle.length; i++) {
+            System.out.println("test_circle[" + i + "] -> " + test_circle[i]);
+        }
     }
 
     @org.junit.jupiter.api.Test
