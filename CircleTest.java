@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CircleTest {
 
-    int [] test_numbers = {100, 10, 1, 0 , -1, -10, -100};
-    double [] test_circumference = {628.32, 62.83, 6.28, 0, 0, 0, 0};
-    double [] test_area = {31415.93, 314.16, 3.14, 0, 0, 0, 0};
+    double [] test_numbers = {100.5, 10.1, 1.7, 0 , -1, -10, -100};
+    double [] test_circumference = {631.46, 63.46, 10.68, 0, 0, 0, 0};
+    double [] test_area = {31730.87, 320.47, 9.08, 0, 0, 0, 0};
 
     Circle [] test_circle;
     @org.junit.jupiter.api.BeforeEach
@@ -66,7 +66,7 @@ class CircleTest {
     @org.junit.jupiter.api.Test
     void testHashCode() {
         for (int i = 0; i < test_circle.length; i++) {
-            System.out.println("test_circle[" + i + "] -> " + test_circle[i]);
+            System.out.println("test_circle[" + i + "].hashCode() -> " + test_circle[i].hashCode());
         }
     }
 }
