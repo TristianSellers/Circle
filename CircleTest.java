@@ -8,6 +8,7 @@ class CircleTest {
     double [] test_circumference = {631.46, 63.46, 10.68, 0, 0, 0, 0};
     double [] test_area = {31730.87, 320.47, 9.08, 0, 0, 0, 0};
 
+
     Circle [] test_circle;
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
@@ -61,6 +62,17 @@ class CircleTest {
 
     @org.junit.jupiter.api.Test
     void testEquals() {
+        Circle obj1 = new Circle(5);
+        Circle obj2 = new Circle(5);
+        Circle obj3 = new Circle(10);
+
+        assertTrue(obj1.equals(obj2));
+        assertTrue(obj1.equals(obj1));
+        assertFalse(obj1.equals(obj3));
+        assertFalse(obj1.equals(null));
+        assertFalse(obj1.equals(test_circle));
+        assertFalse(obj1.equals(new Circle(7)));
+        assertTrue(obj1.equals(new Circle(5)));
     }
 
     @org.junit.jupiter.api.Test
