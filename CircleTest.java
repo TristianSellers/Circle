@@ -38,7 +38,7 @@ class CircleTest {
             String formattedNumber = String.format("%.2f", circumference);
             circumference = Double.parseDouble(formattedNumber);
             assert circumference == test_circumference[i];
-            System.out.println("Circumference[" + i + "] -> " + circumference);
+//            System.out.println("Circumference[" + i + "] -> " + circumference);
         }
     }
 
@@ -49,7 +49,7 @@ class CircleTest {
             String formattedNumber = String.format("%.2f", area);
             area = Double.parseDouble(formattedNumber);
             assert area == test_area[i];
-            System.out.println("Area[" + i + "] -> " + area);
+//            System.out.println("Area[" + i + "] -> " + area);
         }
     }
 
@@ -78,7 +78,12 @@ class CircleTest {
     @org.junit.jupiter.api.Test
     void testHashCode() {
         for (int i = 0; i < test_circle.length; i++) {
-            System.out.println("test_circle[" + i + "].hashCode() -> " + test_circle[i].hashCode());
+            Circle circle = test_circle[i];
+            Circle equiv_circle = new Circle(test_circle[i].getRadius());
+            assertNotSame(circle, equiv_circle);
+            assertEquals(circle, equiv_circle);
+            Circle not_equiv_circle = new Circle(test_circle[i].getRadius() + 1);
+            assertNotEquals(circle, not_equiv_circle);
         }
     }
 }
